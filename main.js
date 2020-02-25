@@ -1,13 +1,15 @@
-alert("test");
+class TodoList{
+    constructor(){
+        this.todos = [];
+    }
 
-class test {
-    function () {
-        
+    addTodo(){
+        this.todos.push("***"); //adicionando "***" no array "todos"
+        console.log(this.todos);
     }
-    method (params) {
-        
-    }
-    outro(){
-        
-    }
+}
+
+const minhaLista = new TodoList(); //instanciando a classe
+document.querySelector("#novoTodo").onclick = function(){
+    minhaLista.addTodo();
 }
