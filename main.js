@@ -1,15 +1,17 @@
-class TodoList{
+class list{
     constructor(){
-        this.todos = [];
+        this.data = [];
     }
+    add(data){
+        this.data.push(data);
+        console.log(this.data)
+    }
+}
 
-    addTodo(){
-        this.todos.push("***"); //adicionando "***" no array "todos"
-        console.log(this.todos);
-    }
+class TodoList extends list{
 }
 
 const minhaLista = new TodoList(); //instanciando a classe
 document.querySelector("#novoTodo").onclick = function(){
-    minhaLista.addTodo();
+    minhaLista.add("oi");
 }
