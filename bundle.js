@@ -44,10 +44,22 @@ function (_list) {
   _inherits(TodoList, _list);
 
   function TodoList() {
+    var _this;
+
     _classCallCheck(this, TodoList);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(TodoList).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TodoList).call(this)); //chamando o constructor da classe pai
+
+    _this.usuario = "Chris";
+    return _this;
   }
+
+  _createClass(TodoList, [{
+    key: "exibeUser",
+    value: function exibeUser() {
+      console.log(this.usuario);
+    }
+  }]);
 
   return TodoList;
 }(list);
@@ -57,3 +69,5 @@ var minhaLista = new TodoList(); //instanciando a classe
 document.querySelector("#novoTodo").onclick = function () {
   minhaLista.add("oi");
 };
+
+minhaLista.exibeUser();
