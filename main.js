@@ -1,27 +1,18 @@
-class list{
-    constructor(){
-        this.data = [];
-    }
-    add(data){
-        this.data.push(data);
-        console.log(this.data)
-    }
-}
+// const user = { nome: "Chris"};
+// user.nome = "Diego"; //fazendo mutação com uma constante
+// console.log(user)
 
-class TodoList extends list{
-    constructor(){
-        super();//chamando o constructor da classe pai
-        this.usuario = "Chris";
-    }
+function teste(x){
 
-    exibeUser(){
-        console.log(this.usuario);
+    let y = 5;
+
+    if(x > y){
+        console.log(x,y)
+
     }
 }
 
-const minhaLista = new TodoList(); //instanciando a classe
-document.querySelector("#novoTodo").onclick = function(){
-    minhaLista.add("oi");
-}
+    y=4; //não pode reatribuir o valor da variável y, porque a 
+         //variável y está dentro do escopo da classe "teste"
 
-minhaLista.exibeUser();
+teste(10)
