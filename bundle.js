@@ -1,17 +1,35 @@
 "use strict";
 
-// const user = { nome: "Chris"};
-// user.nome = "Diego"; //fazendo mutação com uma constante
-// console.log(user)
-function teste(x) {
-  var y = 5;
+//////////////////////////////////////////////////////
+//USANDO O map PARA PERCORRER O VETOR E RETORNAR UMA INFORMAÇÃO
+var arr = [1, 2, 3, 4, 5];
+var newArr = arr.map(function (item) {
+  return item * 0;
+});
+console.log(newArr);
+var arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var newArr2 = arr2.map(function (item, index) {
+  return item * index;
+});
+console.log(newArr2); ///////////////////////////////////////////////////////
+//USANDO O reduce para consumir todo o vetor e retornar uma única variável
 
-  if (x > y) {
-    console.log(x, y);
-  }
-}
+var arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var newArr3 = arr3.reduce(function (total, next) {
+  return total + next;
+});
+console.log(newArr3); ///////////////////////////////////////////////////////
+//USANDO O filter PARA FILTRAR UM ARRAY
 
-y = 4; //não pode reatribuir o valor da variável y, porque a 
-//variável y está dentro do escopo da classe "teste"
+var arr4 = [1, 2, 3, 4, 5, 6];
+var newArr4 = arr4.filter(function (item) {
+  return item % 2 === 0;
+});
+console.log(newArr4); /////////////////////////////////////////////////////
+//USANDO O find PARA PROCURAR UM ELEMENTO DENTRO DO ARRAY
 
-teste(10);
+var arr5 = [1, 2, 3, 4, 5];
+var newArr5 = arr5.find(function (item) {
+  return item === 7;
+});
+console.log(newArr5);
