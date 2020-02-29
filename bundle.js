@@ -1,28 +1,9 @@
 "use strict";
 
-// const arr = [1, 2, 3, 4, 5];
-// const newArr = arr.map(function(item){
-//  return item * 0;
-// });
-// console.log(newArr);
-////////////////////////////////////////////////////////
-//USANDO arrow function
-var arr = [1, 2, 3, 4, 5];
-var newArr = arr.map(function (item) {
-  return item * 2;
-});
-console.log(newArr); ///////////////////////////////////////////////////////
-
-var test = function test() {
-  return ["array", "ARRAY"];
+var soma = function soma() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
+  return a + b;
 };
 
-console.log(test());
-
-var test2 = function test2() {
-  return {
-    nome: "Chris"
-  };
-};
-
-console.log(test2());
+console.log(soma());
