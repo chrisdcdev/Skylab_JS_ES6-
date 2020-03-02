@@ -1,5 +1,13 @@
 "use strict";
 
 var nome = "Christian";
-var idade = 20;
-console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos"));
+var idade = 20; // USO DE Object Short Syntax(Sintaxe curta de objeto)
+
+var dev = {
+  nome: nome,
+  //
+  idade: idade,
+  //
+  empresa: "DevInDev"
+};
+console.log(dev);
