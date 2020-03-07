@@ -59,47 +59,73 @@
 //  EX 03  ////////////////////////////////////////////////////////////////////
 
 
-    const arr = [1, 2, 3, 4, 5];
-    const arrr = arr.map((item) => item + 10);
-    console.log(arrr);
+    // const arr = [1, 2, 3, 4, 5];
+    // const arrr = arr.map((item) => item + 10);
+    // console.log(arrr);
 
-    ////////
+    // ////////
 
-    const usuario = { nome: "Diego", idade: 23 };
+    // const usuario = { nome: "Diego", idade: 23 };
 
-    const mostraIdade = usuario => usuario.idade;
-    console.log(mostraIdade(usuario));
+    // const mostraIdade = usuario => usuario.idade;
+    // console.log(mostraIdade(usuario));
 
-    ////////
+    // ////////
 
-    const nome = "Diego";
-    const idade = 23;
+    // const nome = "Diego";
+    // const idade = 23;
 
-    const mostraUsuario = (nome = 'Diego', idade = 18) => ({
-        nome,
-        idade
-    });
-    console.log(mostraUsuario(nome, idade));
-    console.log(mostraUsuario(nome));
+    // const mostraUsuario = (nome = 'Diego', idade = 18) => ({
+    //     nome,
+    //     idade
+    // });
+    // console.log(mostraUsuario(nome, idade));
+    // console.log(mostraUsuario(nome));
 
-    ////////
+    // ////////
 
-    const promise = function() {
-        return new Promise(function(resolve, reject) {
-        return resolve();
-        })
-        }
+    // const promise = function() {
+    //     return new Promise(function(resolve, reject) {
+    //     return resolve();
+    //     })
+    //     }
     
-    const promisse = () => new Promisse((resolve, reject) => resolve());
+    // const promisse = () => new Promisse((resolve, reject) => resolve());
 
-    const promise = function() {
-        return new Promise(function(resolve, reject) {
-        return resolve();
-        })
-        }
+    // const promise = function() {
+    //     return new Promise(function(resolve, reject) {
+    //     return resolve();
+    //     })
+    //     }
     
-   
+   // EX 04 ////////////////////////////////////////////////////////////////
+  
 
+   const empresa = {
+    nome: 'Rocketseat',
+    endereco: {
+    cidade: 'Rio do Sul',
+    estado: 'SC',
+    }
+    };
+
+   const {nome, endereco: { cidade, estado }} = empresa;
+    
+    console.log(nome); // Rocketseat
+    console.log(cidade); // Rio do Sul
+    console.log(estado); // SC
+
+    ////////
+
+    function mostraInfo({ nome, idade }) {
+        return `${nome} tem ${idade} anos.`;
+    }
+      console.log(mostraInfo({ nome: "Diego", idade: 23 }));
+
+
+   // EX 05 ////////////////////////////////////////////////////////////////
+
+        
 
      
 
