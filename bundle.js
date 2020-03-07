@@ -1,11 +1,5 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //  EX 01  //////////////////////////////////////////////////////////////
 // class Usuario{
 //     constructor(email, senha){
@@ -96,44 +90,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //     }
 //       console.log(mostraInfo({ nome: "Diego", idade: 23 }));
 // EX 05 ////////////////////////////////////////////////////////////////
-var arr = [1, 2, 3, 4, 5, 6];
-var x = arr[0],
-    y = arr.slice(1);
-console.log(x); // 1
-
-console.log(y); // [2, 3, 4, 5, 6]
-
-function soma() {
-  for (var _len = arguments.length, nums = new Array(_len), _key = 0; _key < _len; _key++) {
-    nums[_key] = arguments[_key];
-  }
-
-  return nums.reduce(function (a, b) {
-    return a + b;
-  });
-}
-
-console.log(soma(1, 2, 3, 4, 5, 6, 7, 8, 9)); ///////
-
-var usuario = {
-  nome: 'Diego',
-  idade: 23,
-  endereco: {
-    cidade: 'Rio do Sul',
-    uf: 'SC',
-    pais: 'Brasil'
-  }
-};
-
-var usuario2 = _objectSpread({}, usuario, {
-  nome: "Gabriel"
-});
-
-var usuario3 = _objectSpread({}, usuario, {
-  endereco: _objectSpread({}, usuario.endereco, {
-    cidade: "Lontras"
-  })
-});
-
-console.log(usuario2);
-console.log(usuario3);
+//  const arr = [1, 2, 3, 4, 5, 6];
+//  const [x, ...y] = arr;
+// console.log(x); // 1
+// console.log(y); // [2, 3, 4, 5, 6]
+// function soma(...nums){
+//     return nums.reduce((a,b) => a + b);
+// }
+// console.log(soma(1,2,3,4,5,6,7,8,9));
+// ///////
+// const usuario = {
+//     nome: 'Diego',
+//     idade: 23,
+//     endereco: {
+//         cidade: 'Rio do Sul',
+//         uf: 'SC',
+//         pais: 'Brasil',
+//     }
+//     };
+// const usuario2 = {...usuario, nome: "Gabriel"};
+// const usuario3 = {...usuario, endereco: {...usuario.endereco, cidade: "Lontras"}}
+// console.log(usuario2);
+// console.log(usuario3);
+// Ex6 ////////////////////////////////////////////////////////////////////
+var usuario = 'Diego';
+var idade = 23;
+console.log("O ".concat(usuario, " possui ").concat(idade, " anos"));
