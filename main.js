@@ -101,29 +101,70 @@
    // EX 04 ////////////////////////////////////////////////////////////////
   
 
-   const empresa = {
-    nome: 'Rocketseat',
-    endereco: {
-    cidade: 'Rio do Sul',
-    estado: 'SC',
-    }
-    };
+//    const empresa = {
+//     nome: 'Rocketseat',
+//     endereco: {
+//     cidade: 'Rio do Sul',
+//     estado: 'SC',
+//     }
+//     };
 
-   const {nome, endereco: { cidade, estado }} = empresa;
+//    const {nome, endereco: { cidade, estado }} = empresa;
     
-    console.log(nome); // Rocketseat
-    console.log(cidade); // Rio do Sul
-    console.log(estado); // SC
+//     console.log(nome); // Rocketseat
+//     console.log(cidade); // Rio do Sul
+//     console.log(estado); // SC
 
-    ////////
+//     ////////
 
-    function mostraInfo({ nome, idade }) {
-        return `${nome} tem ${idade} anos.`;
-    }
-      console.log(mostraInfo({ nome: "Diego", idade: 23 }));
+//     function mostraInfo({ nome, idade }) {
+//         return `${nome} tem ${idade} anos.`;
+//     }
+//       console.log(mostraInfo({ nome: "Diego", idade: 23 }));
 
 
    // EX 05 ////////////////////////////////////////////////////////////////
+
+     const arr = [1, 2, 3, 4, 5, 6];
+
+     const [x, ...y] = arr;
+
+    console.log(x); // 1
+    console.log(y); // [2, 3, 4, 5, 6]
+
+    function soma(...nums){
+        return nums.reduce((a,b) => a + b);
+    }
+
+    console.log(soma(1,2,3,4,5,6,7,8,9));
+
+    ///////
+
+    const usuario = {
+        nome: 'Diego',
+        idade: 23,
+        endereco: {
+            cidade: 'Rio do Sul',
+            uf: 'SC',
+            pais: 'Brasil',
+        }
+        };
+
+    const usuario2 = {...usuario, nome: "Gabriel"};
+    const usuario3 = {...usuario, endereco: {...usuario.endereco, cidade: "Lontras"}}
+
+    console.log(usuario2);
+    console.log(usuario3);
+
+    
+
+
+    
+
+    
+
+
+
 
         
 
