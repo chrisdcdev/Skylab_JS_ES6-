@@ -1,4 +1,4 @@
-//  EX 01  ////////////////////////////////////////
+//  EX 01  //////////////////////////////////////////////////////////////
 // class Usuario{
 //     constructor(email, senha){
 //         this.email = email;
@@ -25,33 +25,84 @@
 // console.log(Adm1.isAdmin()) // true
 ////////////////////////////////////////////////////
 
-//  EX 02  //////////////////////////////////////////////
+//  EX 02  //////////////////////////////////////////////////////////////
 
-const usuarios = [
-    { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
-    { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
-    { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
-    ];
+// const usuarios = [
+//     { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
+//     { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
+//     { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
+//     ];
 
-    //map//
-     const idades = usuarios.map( usuario => usuario.idade);
-         console.log(idades);
+//     //map//
+//      const idades = usuarios.map( usuario => usuario.idade);
+//          console.log(idades);
 
-    //filter//
-     const usu = usuarios.filter( usuario => usuario.empresa === "Rocketseat"
-     && usuario.idade > 18 
-     );
+//     //filter//
+//      const usu = usuarios.filter( usuario => usuario.empresa === "Rocketseat"
+//      && usuario.idade > 18 
+//      );
 
-     console.log(usu);
+//      console.log(usu);
 
-    //find//
-     const usu2 = usuarios.find(usuario => usuario.empresa === "Google");
-     console.log(usu2);
+//     //find//
+//      const usu2 = usuarios.find(usuario => usuario.empresa === "Google");
+//      console.log(usu2);
 
-    //multiplicação//
-     const usu3 = usuarios
-     .map( usuario => ({ ...usuario, idade: usuario.idade * 2}))
-     .filter( usuario => usuario.idade <=50);
+//     //multiplicação//
+//      const usu3 = usuarios
+//      .map( usuario => ({ ...usuario, idade: usuario.idade * 2}))
+//      .filter( usuario => usuario.idade <=50);
 
-     console.log(usu3);
+//      console.log(usu3);
+
+
+//  EX 03  ////////////////////////////////////////////////////////////////////
+
+
+    const arr = [1, 2, 3, 4, 5];
+    const arrr = arr.map((item) => item + 10);
+    console.log(arrr);
+
+    ////////
+
+    const usuario = { nome: "Diego", idade: 23 };
+
+    const mostraIdade = usuario => usuario.idade;
+    console.log(mostraIdade(usuario));
+
+    ////////
+
+    const nome = "Diego";
+    const idade = 23;
+
+    const mostraUsuario = (nome = 'Diego', idade = 18) => ({
+        nome,
+        idade
+    });
+    console.log(mostraUsuario(nome, idade));
+    console.log(mostraUsuario(nome));
+
+    ////////
+
+    const promise = function() {
+        return new Promise(function(resolve, reject) {
+        return resolve();
+        })
+        }
+    
+    const promisse = () => new Promisse((resolve, reject) => resolve());
+
+    const promise = function() {
+        return new Promise(function(resolve, reject) {
+        return resolve();
+        })
+        }
+    
+   
+
+
+     
+
+
+
      
