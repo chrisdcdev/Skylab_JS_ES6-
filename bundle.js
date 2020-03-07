@@ -113,6 +113,15 @@
 // console.log(usuario2);
 // console.log(usuario3);
 // Ex6 ////////////////////////////////////////////////////////////////////
-var usuario = 'Diego';
+// const usuario = 'Diego';
+// const idade = 23;
+// console.log(`O ${usuario} possui ${idade} anos`);
+// Ex7 ////////////////////////////////////////////////////////////////////
+var nome = "Diego";
 var idade = 23;
-console.log("O ".concat(usuario, " possui ").concat(idade, " anos"));
+var usuario = {
+  nome: nome,
+  idade: idade,
+  cidade: "Rio do Sul"
+};
+console.log(usuario);
