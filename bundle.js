@@ -1,127 +1,113 @@
-"use strict";
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./main.js");
+/******/ })
+/************************************************************************/
+/******/ ({
 
-//  EX 01  //////////////////////////////////////////////////////////////
-// class Usuario{
-//     constructor(email, senha){
-//         this.email = email;
-//         this.senha = senha;
-//     }
-//     isAdmin(){
-//         return this.admin === true;
-//     }
-// }
-// class Admin extends Usuario{
-//     constructor(email, senha){
-//         super(email, senha);
-//         this.admin = true;
-//     }
-// }
-// const User1 = new Usuario('email@teste.com', 'senha123');
-// const Adm1 = new Admin('email@teste.com', 'senha123');
-// console.log(User1.isAdmin()) // false
-// console.log(Adm1.isAdmin()) // true
-////////////////////////////////////////////////////
-//  EX 02  //////////////////////////////////////////////////////////////
-// const usuarios = [
-//     { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
-//     { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
-//     { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
-//     ];
-//     //map//
-//      const idades = usuarios.map( usuario => usuario.idade);
-//          console.log(idades);
-//     //filter//
-//      const usu = usuarios.filter( usuario => usuario.empresa === "Rocketseat"
-//      && usuario.idade > 18 
-//      );
-//      console.log(usu);
-//     //find//
-//      const usu2 = usuarios.find(usuario => usuario.empresa === "Google");
-//      console.log(usu2);
-//     //multiplicação//
-//      const usu3 = usuarios
-//      .map( usuario => ({ ...usuario, idade: usuario.idade * 2}))
-//      .filter( usuario => usuario.idade <=50);
-//      console.log(usu3);
-//  EX 03  ////////////////////////////////////////////////////////////////////
-// const arr = [1, 2, 3, 4, 5];
-// const arrr = arr.map((item) => item + 10);
-// console.log(arrr);
-// ////////
-// const usuario = { nome: "Diego", idade: 23 };
-// const mostraIdade = usuario => usuario.idade;
-// console.log(mostraIdade(usuario));
-// ////////
-// const nome = "Diego";
-// const idade = 23;
-// const mostraUsuario = (nome = 'Diego', idade = 18) => ({
-//     nome,
-//     idade
-// });
-// console.log(mostraUsuario(nome, idade));
-// console.log(mostraUsuario(nome));
-// ////////
-// const promise = function() {
-//     return new Promise(function(resolve, reject) {
-//     return resolve();
-//     })
-//     }
-// const promisse = () => new Promisse((resolve, reject) => resolve());
-// const promise = function() {
-//     return new Promise(function(resolve, reject) {
-//     return resolve();
-//     })
-//     }
-// EX 04 ////////////////////////////////////////////////////////////////
-//    const empresa = {
-//     nome: 'Rocketseat',
-//     endereco: {
-//     cidade: 'Rio do Sul',
-//     estado: 'SC',
-//     }
-//     };
-//    const {nome, endereco: { cidade, estado }} = empresa;
-//     console.log(nome); // Rocketseat
-//     console.log(cidade); // Rio do Sul
-//     console.log(estado); // SC
-//     ////////
-//     function mostraInfo({ nome, idade }) {
-//         return `${nome} tem ${idade} anos.`;
-//     }
-//       console.log(mostraInfo({ nome: "Diego", idade: 23 }));
-// EX 05 ////////////////////////////////////////////////////////////////
-//  const arr = [1, 2, 3, 4, 5, 6];
-//  const [x, ...y] = arr;
-// console.log(x); // 1
-// console.log(y); // [2, 3, 4, 5, 6]
-// function soma(...nums){
-//     return nums.reduce((a,b) => a + b);
-// }
-// console.log(soma(1,2,3,4,5,6,7,8,9));
-// ///////
-// const usuario = {
-//     nome: 'Diego',
-//     idade: 23,
-//     endereco: {
-//         cidade: 'Rio do Sul',
-//         uf: 'SC',
-//         pais: 'Brasil',
-//     }
-//     };
-// const usuario2 = {...usuario, nome: "Gabriel"};
-// const usuario3 = {...usuario, endereco: {...usuario.endereco, cidade: "Lontras"}}
-// console.log(usuario2);
-// console.log(usuario3);
-// Ex6 ////////////////////////////////////////////////////////////////////
-// const usuario = 'Diego';
-// const idade = 23;
-// console.log(`O ${usuario} possui ${idade} anos`);
-// Ex7 ////////////////////////////////////////////////////////////////////
-var nome = "Diego";
-var idade = 23;
-var usuario = {
-  nome: nome,
-  idade: idade,
-  cidade: "Rio do Sul"
-};
-console.log(usuario);
+/***/ "./funcao.js":
+/*!*******************!*\
+  !*** ./funcao.js ***!
+  \*******************/
+/*! exports provided: soma */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"soma\", function() { return soma; });\nfunction soma(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./funcao.js?");
+
+/***/ }),
+
+/***/ "./main.js":
+/*!*****************!*\
+  !*** ./main.js ***!
+  \*****************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _funcao__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./funcao */ \"./funcao.js\");\n\nconsole.log(Object(_funcao__WEBPACK_IMPORTED_MODULE_0__[\"soma\"])(3, 5));\n\n//# sourceURL=webpack:///./main.js?");
+
+/***/ })
+
+/******/ });
