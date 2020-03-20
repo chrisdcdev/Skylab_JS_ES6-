@@ -1,8 +1,11 @@
 module.exports = {
-    entry:'./main.js',  //arquivo principal
+    entry:'./src/main.js',  //arquivo principal
     output: {
-        path: __dirname,
-        filename: 'bundle.js',
+        path: __dirname +'/public',
+        filename: 'bundle.js' ,
+    },
+    devServer:{
+        contentBase:__dirname + '/public' //caminho pra onde vai abri o servidor da aplicação
     },
     module: {
         rules:[ //falando qual o loader que será utilizado, no caso, é o babel
